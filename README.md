@@ -1,36 +1,101 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Text-to-Image Generator - Electron App
+
+A desktop application for generating images from text prompts using DALL-E API.
+
+## Features
+
+- Text-to-image generation using OpenAI DALL-E
+- Material-UI based professional interface
+- Image download functionality
+- Status indicators for API calls
+- Error handling and user feedback
+- Zustand state management
+
+## Technology Stack
+
+- **Frontend**: Electron + React + TypeScript
+- **UI Framework**: Material-UI
+- **State Management**: Zustand
+- **API Integration**: Axios
+- **Build Tool**: Vite + Electron Builder
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js v18+
+- npm or yarn
+- OpenAI API key
+
+### Installation
+
+1. Clone the repository
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Create a `.env` file based on `.env.example` and add your OpenAI API key:
+
+```
+VITE_OPENAI_API_KEY=your_api_key_here
+```
+
+### Development
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This will start both the Electron app and the React development server.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Building
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To build the application for production:
 
-## Learn More
+```bash
+npm run build
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Usage
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Enter a descriptive text prompt
+2. Click "Generate Image" or press Enter
+3. View the generated images
+4. Download images using the download button
+5. Clear all images with the "Clear All" button
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Project Structure
 
-## Deploy on Vercel
+```
+src/
+├── components/      # React components
+├── store/           # Zustand stores
+├── api/             # API services
+├── types/           # TypeScript types
+├── App.tsx          # Main app component
+└── main.tsx         # React entry point
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## API Configuration
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The application uses OpenAI's DALL-E API. You need to:
+
+1. Sign up for an OpenAI account
+2. Get an API key from the OpenAI dashboard
+3. Add it to your `.env` file
+
+## Future Enhancements
+
+- Add image editing features
+- Support for multiple AI models
+- Image history and favorites
+- Advanced generation options
+- Voice input for prompts
+
+## License
+
+MIT
